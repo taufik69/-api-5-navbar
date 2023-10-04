@@ -8,7 +8,9 @@ const baseUrl = process.env.BASE_URL;
 /* -------------------------------------------------------------------------- */
 _.use(baseUrl, allRoutes);
 _.use(baseUrl, (req, res) => {
-  Error: `Occurs from Routes ${req.url} routes , move to valid Routes`;
+  res.status(400).json({
+    Error: `Occurs from Routes ${req.url} routes , move to valid Routes`,
+  });
 });
 
 /* -------------------------------------------------------------------------- */
